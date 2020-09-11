@@ -13,7 +13,7 @@ On the terminal<br />
 After the server run successfully, paste "http://127.0.0.1:8000/signup/" in the url bar and get yourself registered.<br /><br />
 
 
-You can also set your host_user and host_password by following steps.<br />
+You can also configure your mail settings by changing the host_user and host_password by following steps.<br />
 1). Create a new dummy account on the gmail.<br />
 2). Go to https://myaccount.google.com/lesssecureapps and toggle on 'Allow less secure apps' option.(Note that this is just for testing purpose)<br />
 3). Go to project 'settings.py'<br />
