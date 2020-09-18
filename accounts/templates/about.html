@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
@@ -38,7 +39,7 @@
         </li>
         <li><a href="{% url 'home' %}">Gallery</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
-        <li><a onclick = "openNav()">Upload</a></li>
+
 
 
 
@@ -57,77 +58,14 @@
     </div>
   </div>
 </nav>
-
-
-
-
-
-
-    <p>&nbsp;</p>
-    <center>
-
-      {% if len(pic) != 0 %}
-
-{% for pic in pic %}
-<div class = "card1" style = "width: 400px">
-
- <img class = "card-img-top" src = "{{ pic.image.url }}" alt = "oops" style = "width: 100%; height:300px;"/>
-
-
-
-
-<div class = "card-body">
- {% if pic.user.username == user.username %}
-
-
-
- <div class="w3-dropdown-hover">
-   <button class = "w3-button" style = "font-size:20px;border:1px solid gray;border-radius:50%;background-color:gray;">&#8942;</button>
-
-<div class="w3-dropdown-content w3-bar-block w3-border">
-<form method = "post" enctype = "multipart/form-data">
-  {% csrf_token %}
-
-
-  <button  class = "btn btn-success w3-bar-item w3-button" type = "submit" name = "Edit" value = "{{ pic.id }}" style = "">Edit</button>
-
-
-  <button  class = "btn btn-success w3-bar-item w3-button" type = "submit" name = "Delete" value = "{{ pic.id }}" style = "">Delete</button>
-
-
-
- </div>
- <p>&nbsp;</p>
- </div>
-
-   <input class = "btn btn-light" style =" border: 1px solid white; width: 120px;padding-top:35px; border-radius: 50%; background-color:green; height: 100px;" type = "file" name = "file" value = "file" />
-
-
-</form>
-{% endif %}
-
-
-</div>
-</div>
-<p>&nbsp;</p>
-
-{% endfor %}
-
-{% else %}
-
+<br />
+<br />
 <div class = "container">
 
-<h2>No images yet... Upload some pictures by clicking on Upload button above</h2>
+<h4>This website is designed to upload pictures. User can edit and delete his content.
+He may not be able to edit other users content rather than see through it. </h4>
+
+
 </div>
-
-{% endif %}
-</center>
-
-
-<p>&nbsp;</p>
-
-
-
-
 
 {% endblock %}

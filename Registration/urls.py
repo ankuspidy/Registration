@@ -19,6 +19,8 @@ from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 
 from accounts import views as accounts_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -27,6 +29,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name = 'login.html'), name = 'login'),
     path('logout/', auth_views.LogoutView.as_view(), name = 'logout'),
     path('', accounts_views.home, name = 'home'),
+    path('about/',accounts_views.about,name = 'about'),
 
 
     url(r'^reset/$',
@@ -47,3 +50,5 @@ url(r'^reset/complete/$',
     name='password_reset_complete'),
 
 ]
+
+urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
