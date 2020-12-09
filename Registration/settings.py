@@ -41,16 +41,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'crispy_forms'
 ]
-#Use below when want to send link over console/terminal
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-#Use below when want to send link over the gmail server
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vjoshi5471k@gmail.com' #You can also use your host_user and host_password. To know more about it check out the README.md
-EMAIL_HOST_PASSWORD = 'Dl0404@123'
 
 
 MIDDLEWARE = [
